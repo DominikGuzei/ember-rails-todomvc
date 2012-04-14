@@ -10,6 +10,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'embient'
+gem "ember-rails"
 
 group :development, :test do
   gem 'jasminerice'

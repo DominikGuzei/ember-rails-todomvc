@@ -1,0 +1,31 @@
+<div id="create-todo">
+  {{view Todos.CreateTodoView
+         id="new-todo"
+         placeholder="What needs to be done?"
+         controllerBinding="controller"}}
+</div>
+
+<div id="stats-area">
+
+  {{view Todos.MarkAllDoneCheckbox
+         class="mark-all-done"
+         title="Mark all as complete"
+         controllerBinding="controller"}}
+
+  <div id="todos">
+    {{view Todos.TodoListView
+           id="todo-list"
+           tagName="ul"
+           contentBinding="controller"}}
+  </div>
+
+  {{#view Todos.StatsView id="todo-stats" controllerBinding="controller"}}
+
+    {{#view Todos.ClearCompletedButtonView controllerBinding="controller"}}
+      Clear {{completedString}}
+    {{/view}}
+
+    {{remainingString}} left
+
+  {{/view}}
+</div>
